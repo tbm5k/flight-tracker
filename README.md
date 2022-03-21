@@ -4,7 +4,7 @@ A web app that lets the geographical location and path of a plane be tracked. Fl
 
 [Live demo](https://test.com)
 
-![Screenshot](public/screenshot.png)
+![Screenshot](public/Screenshot.png)
 
 ## Installation
 
