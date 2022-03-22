@@ -1,0 +1,26 @@
+#info-bar {
+    font-size: 10px;
+    width : 351px;
+    height : 86px;
+    background-color : #fff;
+    border-radius: 30px;
+    margin : 0 auto;
+    display : flex;
+    flex-direction : row;
+    justify-content: center;
+    border-top: 22px;
+}
+
+#info-bar > div {
+    width: 30%;
+    padding: 10px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+}
+
+.space-below {
+    padding-bottom: 13px;
+}
