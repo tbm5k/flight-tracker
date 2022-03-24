@@ -5,13 +5,16 @@ import {
   Marker,
 } from "react-google-maps";
 
+let latitude = -1.278286791538775
+let longitude = 36.81009696210602
+
 const Map = withScriptjs(withGoogleMap(props =>
   <GoogleMap
     defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultCenter={{ lat: latitude, lng: longitude }}
   >
     <Marker
-      position={{ lat: -34.397, lng: 150.644 }}
+      position={{ lat: latitude, lng: longitude }}
     />
   </GoogleMap>
 ));
