@@ -9,6 +9,11 @@
     flex-direction : row;
     justify-content: center;
     border-top: 22px;
+
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    margin-left: -45%;
 }
 
 #info-bar > div {
