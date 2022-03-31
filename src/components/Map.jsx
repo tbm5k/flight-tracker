@@ -1,6 +1,8 @@
 import { GoogleMap, LoadScript, OverlayView } from '@react-google-maps/api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlane } from '@fortawesome/free-solid-svg-icons'
 
-const Map = props => {
+const Map = () => {
 
   const containerStyle = {
     width: '100%',
@@ -10,16 +12,6 @@ const Map = props => {
   const center = {
     lat: -1.278286791538775,
     lng: 36.81009696210602
-  };
-  
-  const onClick = () => {
-    console.info('I have been clicked!')
-  };
-  
-  const divStyle = {
-    background: 'white',
-    border: '1px solid #ccc',
-    padding: 15
   };
     
   return(
@@ -35,15 +27,7 @@ const Map = props => {
             position={center}
             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
-            <div style={divStyle}>
-              <h1>OverlayView</h1>
-              <button
-                onClick={onClick}
-                type='button'
-              >
-                Click me
-              </button>
-            </div>
+            <FontAwesomeIcon icon={faPlane} style={{width: '40px', height:'40px', color: 'purple'}}/>
           </OverlayView>
         </GoogleMap>
       </LoadScript>
