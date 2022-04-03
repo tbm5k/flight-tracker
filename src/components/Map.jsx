@@ -1,6 +1,7 @@
 import { GoogleMap, LoadScript, OverlayView } from '@react-google-maps/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlane } from '@fortawesome/free-solid-svg-icons'
+import InfoBar from './InfoBar'
 
 const Map = () => {
 
@@ -29,6 +30,7 @@ const Map = () => {
           >
             <FontAwesomeIcon icon={faPlane} style={{width: '40px', height:'40px', color: 'purple'}}/>
           </OverlayView>
+          <InfoBar />
         </GoogleMap>
       </LoadScript>
   )
