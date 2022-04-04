@@ -21,7 +21,7 @@ const Map = () => {
     await fetch(`https://airlabs.co/api/v9/flights?_view=array&_fields=hex,flag,lat,lng,dir,alt&api_key=${process.env.REACT_APP_AIRLABS_KEY}`)
     .then( res => res.json())
     .then( data => {
-      setPlanes(data)
+      setPlanes(data.slice(300, 400))
     })
     .catch(err => console.log(err))
   }
@@ -32,18 +32,19 @@ const Map = () => {
       >
         <GoogleMap
           mapContainerStyle={containerStyle}
-          center={{lat: 50.3, lng: 3.64}}
-          zoom={10}
+          center={{lat: 46.95168156778651, lng: 7.689743550062828}}
+          zoom={6}
         >
+          {console.log(planes)}
           {
             planes !== undefined ? (
               planes.map( plane => (
                 <OverlayView 
                   key={plane[0]}
-                  center={{lat: plane[2], lng: plane[3]}}
+                  position={{lat: plane[2], lng: plane[3]}}
                   mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                 >
-                  <FontAwesomeIcon icon={faPlane} style={{width: '40px', height:'40px', color: 'purple'}}/> 
+                  <FontAwesomeIcon icon={faPlane} style={{width: '30px', height:'30px', color: 'purple'}}/> 
                 </OverlayView>
             ))) : null
           }
