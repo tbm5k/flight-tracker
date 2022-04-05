@@ -7,7 +7,7 @@ const InfoBar = ({flight, style}) => {
             <div>
                 <p className='space-below'>Kenya Airways</p>
                 <p className='space-below'>{flight.reg_number}</p>
-                <p>E90</p>
+                <p>Model: {flight.model || 'unavailable'}</p>
             </div>
             <div>
                 <div className='list'>
@@ -24,14 +24,17 @@ const InfoBar = ({flight, style}) => {
                 </div>
             </div>
             <div>
-                <p className='space-below'>Nairobi-Lagos</p>
                 <div className='list'>
-                    <p className='space-below'>Departure</p>
-                    <p className='space-below'>12:00</p>
+                    <p className='space-below'>Altitude: </p>
+                    <p className='space-below'>{flight.alt || 'unavailable'}</p>
                 </div>
                 <div className='list'>
-                    <p className='space-below'>Arrival</p>
-                    <p>12:00</p>
+                    <p className='space-below'>Departure: </p>
+                    <p className='space-below'>{flight.dep_time || 'unavailable'}</p>
+                </div>
+                <div className='list'>
+                    <p className='space-below'>Arrival: </p>
+                    <p>{flight.arr_time || 'unavailable'}</p>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import { GoogleMap, LoadScript, OverlayView } from '@react-google-maps/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlane } from '@fortawesome/free-solid-svg-icons'
 import InfoBar from './InfoBar'
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const Map = () => {
 
@@ -30,8 +30,20 @@ const Map = () => {
 
   const handleClick = flightData => {
     setPlane(flightData)
+    console.log(flightData)
     setStyle('info-bar')
   }
+
+  const options = {
+    mapId: 'e4ce5f702daf4f3e',
+    disableDefaultUI: true,
+    clickableIcons: false,
+  }
+
+  const center = useMemo(() => ({
+    lat: 46.95168156778651, 
+    lng: 7.689743550062828
+  }), [])
 
   return(
     <LoadScript
@@ -39,8 +51,9 @@ const Map = () => {
       >
         <GoogleMap
           mapContainerStyle={containerStyle}
-          center={{lat: 46.95168156778651, lng: 7.689743550062828}}
+          center={center}
           zoom={6}
+          options={options}
         >
           {
             planes !== undefined ? (
@@ -50,7 +63,7 @@ const Map = () => {
                   position={{lat: plane.lat, lng: plane.lng}}
                   mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                 >
-                  <FontAwesomeIcon icon={faPlane} style={{width: '30px', height:'30px', color: 'purple'}} onClick={() => handleClick(plane)}/> 
+                  <FontAwesomeIcon icon={faPlane} style={{width: '30px', height:'30px', color: 'white'}} onClick={() => handleClick(plane)}/> 
                 </OverlayView>
             ))) : null
           }
