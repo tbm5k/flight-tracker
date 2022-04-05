@@ -1,4 +1,8 @@
-#info-bar {
+.info-bar-default {
+    display: none;
+}
+
+.info-bar {
     font-size: 10px;
     width : 351px;
     height : 86px;

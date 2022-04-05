@@ -1,9 +1,9 @@
 import './InfoBar.css'
 
-const InfoBar = ({flight}) => {
+const InfoBar = ({flight, style}) => {
 
     return(
-        <div id="info-bar">
+        <div className={style}>
             <div>
                 <p className='space-below'>Kenya Airways</p>
                 <p className='space-below'>{flight.reg_number}</p>

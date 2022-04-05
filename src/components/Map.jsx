@@ -8,6 +8,7 @@ const Map = () => {
 
   const [planes, setPlanes] = useState([])
   const [plane, setPlane] = useState({})
+  const [style, setStyle] = useState('info-bar-default')
 
   const containerStyle = {
     width: '100%',
@@ -29,6 +30,7 @@ const Map = () => {
 
   const handleClick = flightData => {
     setPlane(flightData)
+    setStyle('info-bar')
   }
 
   return(
@@ -52,7 +54,7 @@ const Map = () => {
                 </OverlayView>
             ))) : null
           }
-          <InfoBar flight={plane}/>
+          <InfoBar flight={plane} style={style}/>
         </GoogleMap>
       </LoadScript>
   )
