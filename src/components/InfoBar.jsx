@@ -1,6 +1,6 @@
 import './InfoBar.css'
 
-const InfoBar = flight => {
+const InfoBar = ({flight}) => {
 
     return(
         <div id="info-bar">

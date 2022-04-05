@@ -29,7 +29,6 @@ const Map = () => {
 
   const handleClick = flightData => {
     setPlane(flightData)
-    console.log(flightData)
   }
 
   return(
@@ -53,39 +52,7 @@ const Map = () => {
                 </OverlayView>
             ))) : null
           }
-          {/* <InfoBar flight={plane}/> */}
-          <div id="info-bar">
-            <div>
-                <p className='space-below'>Kenya Airways</p>
-                <p className='space-below'>{plane.reg_number}</p>
-                <p>E90</p>
-            </div>
-            <div>
-                <div className='list'>
-                    <p className='space-below'>Speed</p>
-                    <p className='space-below'>{plane.speed}</p>
-                </div>
-                <div className='list'>
-                    <p className='space-below'>Lat</p>
-                    <p className='space-below'>{plane.lat}</p>
-                </div>
-                <div className='list'>
-                    <p className='space-below'>Long</p>
-                    <p>{plane.lng}</p>
-                </div>
-            </div>
-            <div>
-                <p className='space-below'>Nairobi-Lagos</p>
-                <div className='list'>
-                    <p className='space-below'>Departure</p>
-                    <p className='space-below'>12:00</p>
-                </div>
-                <div className='list'>
-                    <p className='space-below'>Arrival</p>
-                    <p>12:00</p>
-                </div>
-            </div>
-        </div>
+          <InfoBar flight={plane}/>
         </GoogleMap>
       </LoadScript>
   )
