@@ -1,0 +1,21 @@
+apiVersion: app/v1
+kind: Deployment
+metadata: 
+  name: flight-tracker-deployment
+  labels: 
+    app: flight-tracker
+spec: 
+  replicas: 2
+  selector: 
+    matchLabels: 
+      app: flight-tracker
+  template:
+    metadata:
+      labels:
+        app: flight-tracker
+    spec: 
+      containers:
+      - name: flight-tracker
+        image: #image url
+        ports:
+        - containerPort: 3000
