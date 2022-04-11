@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flight-tracker-service
+spec:
+  selector:
+    app: flight-tracker
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
